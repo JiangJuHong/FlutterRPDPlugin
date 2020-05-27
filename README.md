@@ -16,7 +16,7 @@ Flutter RPD(Rapid plug-in development)，寓意为“Flutter快速开发插件 �
    
 ## 使用
 ### CommonUtil
-#### 1. 强制参数获取【CommonUtil.getParam<T>(MethodCall,Result,String)】
+#### 1. 必传参数获取【CommonUtil.getParam<T>(MethodCall,Result,String)】
 通过调用方法 `getParam<T>(MethodCall,Result,String)` 在 \[MethodCall\] 中获得 \[String\] 参数，如果没有获得内容，则直接抛出异常  
 Java:
 ````java
@@ -42,7 +42,7 @@ public func `init`(call: FlutterMethodCall, result: @escaping FlutterResult) {
     }
 }
 ````
-#### 2. 方法调用
+#### 2. 方法全自动调用
 方法调用通过反射实现，因此你不需要编写 switch 、if 等来判断 `call.method`，如果该方法，你可以很好的将底层方法和Flutter方法一一对应.  
 如果要使用，你只需要在 `MethodCallHandler` 的处理块中添加以下代码:  
 Java:
