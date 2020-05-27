@@ -1,0 +1,1 @@
+-keep class top.huic.rpd_plugin.** {*;}
