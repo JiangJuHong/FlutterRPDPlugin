@@ -10,8 +10,9 @@ Flutter RPD(Rapid plug-in development)，寓意为“Flutter快速开发插件 �
     ````yaml
     dependencies:
       ......
-      rpd_plugin: 最新版本
-    
+      rpd_plugin:
+        git:
+          url: https://github.com/JiangJuHong/FlutterRPDPlugin
     ````
    
 ## 使用
@@ -50,6 +51,14 @@ Java:
 
 ````
 Swift:
-````
 
+handler 回调中编写:
+```` swift
+ CommonUtil.invokeMethod(target: self, method: call.method, call: call, result: result)
 ````
+动态方法的格式为:
+````
+@objc
+private func 方法名(call: FlutterMethodCall, result: @escaping FlutterResult) {}
+````
+> 其中的 ``@objc`` ``call: FlutterMethodCall``,``result: @escaping FlutterResult`` 为固定格式，禁止编辑

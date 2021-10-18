@@ -11,12 +11,7 @@ import top.huic.rpd_plugin.util.CommonUtil
 
 class RpdPluginMethodCallHandler : MethodCallHandler {
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-        if (call.method == "testGetParam") {
-            this.testGetParam(call, result);
-            return;
-        }
-
-        result.notImplemented()
+        CommonUtil.invokeMethod(this, call.method, call, result);
     }
 
     /**
