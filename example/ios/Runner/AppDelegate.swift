@@ -17,21 +17,18 @@ import rpd_plugin.RpdPlugin
     }
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        if call.method == "testGetParam" {
-            testGetParam(call: call, result: result)
-            return;
-        }
-        result(FlutterMethodNotImplemented);
+        CommonUtil.invokeMethod(target: self, method: call.method, call: call, result: result)
     }
 
     /// 测试强制参数获取
+    @objc
     private func testGetParam(call: FlutterMethodCall, result: @escaping FlutterResult) {
 //        if let appid = CommonUtil.getParam(call: call, result: result, param: "appid") as? String,
 //           let enabledLogPrint = CommonUtil.getParam(call: call, result: result, param: "enabledLogPrint") as? Bool,
 //           let logPrintLevel = CommonUtil.getParam(call: call, result: result, param: "logPrintLevel") as? Int {
 //            print("我运行成功啦!");
 //        }
-
-        result(FlutterError(code: "5", message: "Missing parameter", details: "Cannot find parameter is null!"));
+        result("123")
+//        result(FlutterError(code: "5", message: "Missing parameter", details: "Cannot find parameter is null!"));
     }
 }

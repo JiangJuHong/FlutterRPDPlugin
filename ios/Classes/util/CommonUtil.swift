@@ -16,4 +16,10 @@ public class CommonUtil {
         result(FlutterError(code: "error", message: "Missing parameter", details: "Cannot find parameter `\(param)` or `\(param)` is null!"));
         return nil;
     }
+
+    /// 动态调用方法
+    public static func invokeMethod(target: NSObject, method: String, call: FlutterMethodCall, result: @escaping FlutterResult) {
+        let block: @convention(block) (Any?) -> Void = result
+        target.perform(NSSelectorFromString(method + "WithCall:result:"), with: call, with: block)
+    }
 }
