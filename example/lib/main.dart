@@ -17,9 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    this.methods = {
-      "testParam": () => RpdPluginExample.testGetParam()
-    };
+    this.methods = {"testParam": () => RpdPluginExample.testGetParam()};
   }
 
   @override
@@ -39,7 +37,7 @@ class _MyAppState extends State<MyApp> {
                   children: methods.keys
                       .map(
                         (key) => RaisedButton(
-                          onPressed: methods[key],
+                          onPressed: () => methods[key]!(),
                           child: Text(key),
                         ),
                       )
