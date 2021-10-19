@@ -21,6 +21,7 @@ Flutter RPD(Rapid plug-in development)，寓意为“Flutter快速开发插件 �
 ### CommonUtil
 
 #### 1. 必传参数获取【CommonUtil.getParam<T>(MethodCall,Result,String)】
+> 此内容于 ``2021/10/19`` 已不推荐使用，正式版本将移除，建议在 Flutter 层做 assert 以及 required 判定.
 
 通过调用方法 `getParam<T>(MethodCall,Result,String)` 在 \[MethodCall\] 中获得 \[String\] 参数，如果没有获得内容，则直接抛出异常  
 Java:
