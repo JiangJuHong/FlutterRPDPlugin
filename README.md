@@ -30,11 +30,11 @@ Java:
 import top.huic.rpd_plugin.util.CommonUtil;
 
 private void init(MethodCall methodCall,Result result){
-        String appid=CommonUtil.getParam(methodCall,result,"appid");
-        Boolean enabledLogPrint=CommonUtil.getParam(methodCall,result,"enabledLogPrint");
-        Integer logPrintLevel=CommonUtil.getParam(methodCall,result,"logPrintLevel");
-        ......
-        }
+    String appid=CommonUtil.getParam(methodCall,result,"appid");
+    Boolean enabledLogPrint=CommonUtil.getParam(methodCall,result,"enabledLogPrint");
+    Integer logPrintLevel=CommonUtil.getParam(methodCall,result,"logPrintLevel");
+    ......
+}
 ````
 
 Swift:
